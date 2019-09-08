@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.UUID;
 import java.util.function.Consumer;
 
-public class RunComsumer implements JsonEvent {
+public class RunConsumer implements JsonEvent {
 
     @NotNull
     private final UUID uuid;
@@ -21,7 +21,7 @@ public class RunComsumer implements JsonEvent {
     @NotNull
     private final Listener listener;
 
-    public RunComsumer(@NotNull JavaPlugin plugin, @NotNull UUID uuid, boolean removeAfter, @NotNull Consumer<Player> consumer) {
+    public RunConsumer(@NotNull JavaPlugin plugin, @NotNull UUID uuid, boolean removeAfter, @NotNull Consumer<Player> consumer) {
         this.uuid = UUID.randomUUID();
 
         Listener listener = new Listener() {
@@ -29,6 +29,7 @@ public class RunComsumer implements JsonEvent {
             public void run(PlayerCommandPreprocessEvent event) {
                 if (!event.getMessage().equalsIgnoreCase("/spigot:callback " + uuid.toString())) return;
 
+                event.setCancelled(true);
                 consumer.accept(event.getPlayer());
 
                 if (removeAfter)
