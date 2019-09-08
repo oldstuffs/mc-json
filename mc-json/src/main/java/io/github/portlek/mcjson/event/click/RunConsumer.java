@@ -29,7 +29,8 @@ public class RunConsumer implements JsonEvent {
             listener = new Listener() {
                 @EventHandler
                 public void run(PlayerCommandPreprocessEvent event) {
-                    if (!event.getMessage().equalsIgnoreCase("/spigot:callback " + uuid.toString())) return;
+                    if (!event.getMessage().equalsIgnoreCase("/spigot:callback " + uuid.toString()))
+                        return;
 
                     event.setCancelled(true);
                     consumer.accept(event.getPlayer());
