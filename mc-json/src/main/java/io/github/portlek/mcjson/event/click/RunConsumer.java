@@ -22,7 +22,6 @@ public class RunConsumer implements JsonEvent {
     private final Listener listener;
 
     public RunConsumer(@NotNull JavaPlugin plugin,
-                       @NotNull UUID uuid,
                        boolean removeAfter,
                        @NotNull Consumer<Player> consumer) {
         Bukkit.getServer().getPluginManager().registerEvents(
