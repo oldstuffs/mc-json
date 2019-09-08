@@ -21,23 +21,26 @@ public class RunConsumer implements JsonEvent {
     @NotNull
     private final Listener listener;
 
-    public RunConsumer(@NotNull JavaPlugin plugin, @NotNull UUID uuid, boolean removeAfter, @NotNull Consumer<Player> consumer) {
+    public RunConsumer(@NotNull JavaPlugin plugin,
+                       @NotNull UUID uuid,
+                       boolean removeAfter,
+                       @NotNull Consumer<Player> consumer) {
+        Bukkit.getServer().getPluginManager().registerEvents(
+            listener = new Listener() {
+                @EventHandler
+                public void run(PlayerCommandPreprocessEvent event) {
+                    if (!event.getMessage().equalsIgnoreCase("/spigot:callback " + uuid.toString())) return;
+
+                    event.setCancelled(true);
+                    consumer.accept(event.getPlayer());
+
+                    if (removeAfter)
+                        unregister();
+                }
+            },
+            plugin
+        );
         this.uuid = UUID.randomUUID();
-
-        Listener listener = new Listener() {
-            @EventHandler
-            public void run(PlayerCommandPreprocessEvent event) {
-                if (!event.getMessage().equalsIgnoreCase("/spigot:callback " + uuid.toString())) return;
-
-                event.setCancelled(true);
-                consumer.accept(event.getPlayer());
-
-                if (removeAfter)
-                    unregister();
-            }
-        };
-        Bukkit.getServer().getPluginManager().registerEvents(listener, plugin);
-        this.listener = listener;
     }
 
     @NotNull
