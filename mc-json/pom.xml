@@ -11,6 +11,27 @@
 
     <artifactId>mc-json</artifactId>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
     <repositories>
         <repository>
             <id>spigotmc-repo</id>
@@ -30,15 +51,70 @@
             <version>2.2</version>
         </dependency>
         <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>1.14.4-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>io.github.portlek.mc-json</groupId>
             <artifactId>api</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.14.4-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_8_R1</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_8_R2</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_8_R3</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_9_R1</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_9_R2</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_10_R1</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_11_R1</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_12_R1</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_13_R1</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_13_R2</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.portlek.mc-json.nms</groupId>
+            <artifactId>v1_14_R1</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

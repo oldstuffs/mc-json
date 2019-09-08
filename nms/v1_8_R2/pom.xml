@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>io.github.portlek.mc-json.nms</groupId>
     <artifactId>v1_8_R2</artifactId>
 
     <dependencies>
