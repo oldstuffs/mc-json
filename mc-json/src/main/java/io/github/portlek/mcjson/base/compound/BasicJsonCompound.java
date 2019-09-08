@@ -1,8 +1,8 @@
-package io.github.portlek.mcjson.compound;
+package io.github.portlek.mcjson.base.compound;
 
 import io.github.portlek.mcjson.api.JsonCompound;
 import io.github.portlek.mcjson.api.JsonFeature;
-import io.github.portlek.mcjson.feature.EmptyFeature;
+import io.github.portlek.mcjson.base.feature.EmptyFeature;
 import org.jetbrains.annotations.NotNull;
 
 public final class BasicJsonCompound implements JsonCompound {

@@ -1,6 +1,6 @@
-package io.github.portlek.mcjson.message;
+package io.github.portlek.mcjson.base.message;
 
-import io.github.portlek.mcjson.JsonPlayerOf;
+import io.github.portlek.mcjson.base.JsonPlayerOf;
 import io.github.portlek.mcjson.api.JsonCompound;
 import io.github.portlek.mcjson.api.JsonMessage;
 import org.bukkit.Bukkit;

@@ -1,4 +1,4 @@
-package io.github.portlek.mcjson.event.hover;
+package io.github.portlek.mcjson.base.event.hover;
 
 import io.github.portlek.mcjson.api.JsonEvent;
 import io.github.portlek.nbt.base.ItemStackNBTOf;

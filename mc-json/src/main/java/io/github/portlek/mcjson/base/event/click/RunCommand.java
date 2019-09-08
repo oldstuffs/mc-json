@@ -1,20 +1,20 @@
-package io.github.portlek.mcjson.event.click;
+package io.github.portlek.mcjson.base.event.click;
 
 import io.github.portlek.mcjson.api.JsonEvent;
 import org.jetbrains.annotations.NotNull;
 
-public final class SuggestCommand implements JsonEvent {
+public final class RunCommand implements JsonEvent {
 
     @NotNull
     private final String value;
 
-    public SuggestCommand(@NotNull String value) {
+    public RunCommand(@NotNull String value) {
         this.value = value;
     }
 
     @NotNull
     public String action() {
-        return "suggest_command";
+        return "run_command";
     }
 
     @NotNull

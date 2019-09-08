@@ -1,4 +1,4 @@
-package io.github.portlek.mcjson;
+package io.github.portlek.mcjson.base;
 
 import io.github.portlek.mcjson.api.IJson;
 import io.github.portlek.mcjson.api.JsonPlayer;

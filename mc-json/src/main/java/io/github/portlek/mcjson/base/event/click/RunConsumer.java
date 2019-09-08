@@ -1,4 +1,4 @@
-package io.github.portlek.mcjson.event.click;
+package io.github.portlek.mcjson.base.event.click;
 
 import io.github.portlek.mcjson.api.JsonEvent;
 import org.bukkit.Bukkit;

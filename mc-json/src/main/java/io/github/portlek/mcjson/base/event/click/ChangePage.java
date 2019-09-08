@@ -1,20 +1,20 @@
-package io.github.portlek.mcjson.event.click;
+package io.github.portlek.mcjson.base.event.click;
 
 import io.github.portlek.mcjson.api.JsonEvent;
 import org.jetbrains.annotations.NotNull;
 
-public final class OpenURL implements JsonEvent {
+public final class ChangePage implements JsonEvent {
 
     @NotNull
     private final String value;
 
-    public OpenURL(@NotNull String value) {
+    public ChangePage(@NotNull String value) {
         this.value = value;
     }
 
     @NotNull
     public String action() {
-        return "open_url";
+        return "change_page";
     }
 
     @NotNull
