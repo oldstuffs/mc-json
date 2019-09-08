@@ -1,12 +1,12 @@
 package io.github.portlek.mcjson.nms.v1_13_R2;
 
-import com.sun.istack.internal.NotNull;
 import io.github.portlek.mcjson.api.IJson;
 import net.minecraft.server.v1_13_R2.IChatBaseComponent;
 import net.minecraft.server.v1_13_R2.Packet;
 import net.minecraft.server.v1_13_R2.PacketPlayOutChat;
 import org.bukkit.craftbukkit.v1_13_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 public class Json1_13_R2 implements IJson {
 
