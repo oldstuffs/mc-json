@@ -24,6 +24,7 @@ public class RunConsumer implements JsonEvent {
     public RunConsumer(@NotNull JavaPlugin plugin,
                        boolean removeAfter,
                        @NotNull Consumer<Player> consumer) {
+        this.uuid = UUID.randomUUID();
         Bukkit.getServer().getPluginManager().registerEvents(
             listener = new Listener() {
                 @EventHandler
@@ -40,7 +41,6 @@ public class RunConsumer implements JsonEvent {
             },
             plugin
         );
-        this.uuid = UUID.randomUUID();
     }
 
     @NotNull
