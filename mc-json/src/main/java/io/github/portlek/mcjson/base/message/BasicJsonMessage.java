@@ -1,15 +1,11 @@
 package io.github.portlek.mcjson.base.message;
 
-import io.github.portlek.mcjson.base.JsonPlayerOf;
 import io.github.portlek.mcjson.api.JsonCompound;
 import io.github.portlek.mcjson.api.JsonMessage;
+import io.github.portlek.mcjson.base.JsonPlayerOf;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerCommandPreprocessEvent;
-import org.cactoos.iterable.IterableOf;
 import org.cactoos.list.ListOf;
-import org.cactoos.list.Mapped;
-import org.cactoos.scalar.And;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
