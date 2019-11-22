@@ -24,14 +24,17 @@ public final class ShowText implements JsonEvent {
 
     @NotNull
     private String merge() {
-        StringBuilder builder = new StringBuilder();
-        for (int b = 0; b < text.length; b++) {
-            builder.append("{\"text\":\"").append(b).append("\"}");
+        final StringBuilder builder = new StringBuilder();
 
-            if (b + 1 != text.length)
+        for (int i = 0; i < text.length; i++) {
+            builder.append("{\"text\":\"").append(text[i]).append("\"}");
+
+            if (i + 1 != text.length) {
                 builder.append(",");
+            }
 
         }
+
         return builder.toString();
     }
 

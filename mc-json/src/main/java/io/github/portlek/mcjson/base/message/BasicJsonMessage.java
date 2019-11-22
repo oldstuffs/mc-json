@@ -2,6 +2,7 @@ package io.github.portlek.mcjson.base.message;
 
 import io.github.portlek.mcjson.api.JsonCompound;
 import io.github.portlek.mcjson.api.JsonMessage;
+import io.github.portlek.mcjson.api.JsonPlayer;
 import io.github.portlek.mcjson.base.JsonPlayerOf;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -34,15 +35,18 @@ public final class BasicJsonMessage implements JsonMessage {
     @Override
     public void send(@NotNull Player... players) {
         for (Player player : players) {
-            StringBuilder stringBuilder = new StringBuilder();
+            final StringBuilder stringBuilder = new StringBuilder();
+            final JsonPlayer jsonPlayer = new JsonPlayerOf(player);
 
             for (int i = 0; i < compounds.size(); i++) {
                 stringBuilder.append(compounds.get(i).convert());
 
-                if (i != compounds.size() - 1)
+                if (i != compounds.size() - 1) {
                     stringBuilder.append(",");
+                }
             }
-            new JsonPlayerOf(player).sendRaw("[" + stringBuilder.toString() + "]");
+
+            jsonPlayer.sendRaw("[" + stringBuilder.toString() + "]");
         }
     }
 
