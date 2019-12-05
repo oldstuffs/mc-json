@@ -46,7 +46,7 @@ public final class BasicJsonMessage implements JsonMessage {
                 }
             }
 
-            jsonPlayer.sendRaw("[" + stringBuilder.toString() + "]");
+            jsonPlayer.sendRaw("[\"\"," + stringBuilder.toString() + "]");
         }
     }
 
