@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 public final class ColorFeature extends JsonFeatureEnvelope {
 
     public ColorFeature(@NotNull String color) {
-        super("color", color);
+        super("color", "\"" + color + "\"");
     }
 
 }

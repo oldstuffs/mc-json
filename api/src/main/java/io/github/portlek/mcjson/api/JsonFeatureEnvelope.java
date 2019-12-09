@@ -18,7 +18,7 @@ public abstract class JsonFeatureEnvelope implements JsonFeature {
     @NotNull
     @Override
     public String handle() {
-        return ",\"" + path + "\": " + value;
+        return ",\"" + path + "\":" + value;
     }
 
 }

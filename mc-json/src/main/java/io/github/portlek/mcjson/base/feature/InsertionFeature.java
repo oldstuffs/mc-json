@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 public final class InsertionFeature extends JsonFeatureEnvelope {
 
     public InsertionFeature(@NotNull String insertion) {
-        super("insertion", insertion);
+        super("insertion", "\"" + insertion + "\"");
     }
 
 }
