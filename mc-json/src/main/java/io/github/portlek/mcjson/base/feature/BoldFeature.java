@@ -1,20 +1,11 @@
 package io.github.portlek.mcjson.base.feature;
 
-import io.github.portlek.mcjson.api.JsonFeature;
-import org.jetbrains.annotations.NotNull;
+import io.github.portlek.mcjson.api.JsonFeatureEnvelope;
 
-public final class BoldFeature implements JsonFeature {
-
-    private final boolean bold;
+public final class BoldFeature extends JsonFeatureEnvelope {
 
     public BoldFeature(boolean bold) {
-        this.bold = bold;
-    }
-
-    @NotNull
-    @Override
-    public String handle() {
-        return ",\"bold\": " + bold;
+        super("bold", bold);
     }
 
 }

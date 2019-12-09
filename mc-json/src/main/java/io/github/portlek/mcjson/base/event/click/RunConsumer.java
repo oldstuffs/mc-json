@@ -17,16 +17,13 @@ public class RunConsumer implements JsonEvent {
     @NotNull
     private final UUID uuid;
 
-    @NotNull
-    private final Listener listener;
-
     private boolean registered = false;
 
     public RunConsumer(@NotNull JavaPlugin plugin,
                        boolean removeAfter,
                        @NotNull Consumer<Player> consumer) {
         this.uuid = UUID.randomUUID();
-        listener = new Listener() {
+        @NotNull Listener listener = new Listener() {
             @EventHandler
             public void run(PlayerCommandPreprocessEvent event) {
                 if (!event.getMessage().equalsIgnoreCase("/spigot:callback " + uuid.toString())) {
@@ -58,10 +55,6 @@ public class RunConsumer implements JsonEvent {
     @NotNull
     public String value() {
         return "\"/spigot:callback " + uuid + '"';
-    }
-
-    private void unregister() {
-        registered = false;
     }
 
 }

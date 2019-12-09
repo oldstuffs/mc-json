@@ -15,15 +15,30 @@ public final class BasicJsonCompound implements JsonCompound {
     @NotNull
     private final List<JsonFeature> jsonFeatures;
 
+    public BasicJsonCompound(@NotNull String text, @NotNull List<JsonFeature> jsonFeatures) {
+        this.text = text;
+        this.jsonFeatures = jsonFeatures;
+    }
+
     public BasicJsonCompound(@NotNull String text,
                              @NotNull JsonFeature... jsonFeatures) {
-        this.text = text;
-        this.jsonFeatures = new ListOf<>(jsonFeatures);
+        this(text, new ListOf<>(jsonFeatures));
     }
 
     @NotNull
     public String convert() {
-        return "{\"text\":\"" + text + '"' + jsonFeatures + '}';
+        return "{\"text\":\"" + text + '"' + merge() + '}';
+    }
+
+    @NotNull
+    private String merge() {
+        final StringBuilder builder = new StringBuilder();
+
+        for (JsonFeature jsonFeature : jsonFeatures) {
+            builder.append(jsonFeature.handle());
+        }
+
+        return builder.toString();
     }
 
 }
