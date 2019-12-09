@@ -16,6 +16,7 @@ public final class ShowItem implements JsonEvent {
 
     @NotNull
     public String action() { return "show_item"; }
+
     @NotNull
     public String value() {
         return "\"" + new ItemStackNBTOf(itemStack).nbt().toString() + "\"";

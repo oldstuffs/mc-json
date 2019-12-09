@@ -2,8 +2,10 @@ package io.github.portlek.mcjson.base.compound;
 
 import io.github.portlek.mcjson.api.JsonCompound;
 import io.github.portlek.mcjson.api.JsonFeature;
-import io.github.portlek.mcjson.base.feature.EmptyFeature;
+import org.cactoos.list.ListOf;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 public final class BasicJsonCompound implements JsonCompound {
 
@@ -11,35 +13,17 @@ public final class BasicJsonCompound implements JsonCompound {
     private final String text;
 
     @NotNull
-    private final JsonFeature jsonFeature1;
-
-    @NotNull
-    private final JsonFeature jsonFeature2;
+    private final List<JsonFeature> jsonFeatures;
 
     public BasicJsonCompound(@NotNull String text,
-                             @NotNull JsonFeature jsonFeature1,
-                             @NotNull JsonFeature jsonFeature2) {
+                             @NotNull JsonFeature... jsonFeatures) {
         this.text = text;
-        this.jsonFeature1 = jsonFeature1;
-        this.jsonFeature2 = jsonFeature2;
-    }
-
-    public BasicJsonCompound(@NotNull String text,
-                             @NotNull JsonFeature jsonFeature1) {
-        this(text, jsonFeature1, new EmptyFeature());
-    }
-
-    public BasicJsonCompound(@NotNull String text) {
-        this(text, new EmptyFeature(), new EmptyFeature());
-    }
-
-    public BasicJsonCompound() {
-        this("", new EmptyFeature(), new EmptyFeature());
+        this.jsonFeatures = new ListOf<>(jsonFeatures);
     }
 
     @NotNull
     public String convert() {
-        return "{\"text\":\"" + text + '"' + jsonFeature1.handle() + jsonFeature2.handle() + '}';
+        return "{\"text\":\"" + text + '"' + jsonFeatures + '}';
     }
 
 }
