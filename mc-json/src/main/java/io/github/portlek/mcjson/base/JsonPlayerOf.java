@@ -9,6 +9,7 @@ import io.github.portlek.mcjson.nms.v1_12_R1.Json1_12_R1;
 import io.github.portlek.mcjson.nms.v1_13_R1.Json1_13_R1;
 import io.github.portlek.mcjson.nms.v1_13_R2.Json1_13_R2;
 import io.github.portlek.mcjson.nms.v1_14_R1.Json1_14_R1;
+import io.github.portlek.mcjson.nms.v1_15_R1.Json1_15_R1;
 import io.github.portlek.mcjson.nms.v1_8_R1.Json1_8_R1;
 import io.github.portlek.mcjson.nms.v1_8_R2.Json1_8_R2;
 import io.github.portlek.mcjson.nms.v1_8_R3.Json1_8_R3;
@@ -32,7 +33,8 @@ public class JsonPlayerOf implements JsonPlayer {
         Json1_12_R1.class,
         Json1_13_R1.class,
         Json1_13_R2.class,
-        Json1_14_R1.class
+        Json1_14_R1.class,
+        Json1_15_R1.class
     ).of().instance();
 
     @NotNull
